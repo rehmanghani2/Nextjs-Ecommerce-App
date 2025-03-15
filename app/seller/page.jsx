@@ -5,7 +5,7 @@ import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { err } from "inngest/types";
+// import { err } from "inngest/types";
 
 
 const AddProduct = () => {
