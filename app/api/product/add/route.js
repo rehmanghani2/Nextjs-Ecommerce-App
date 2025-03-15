@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 // import { assets } from "../../../../assets/assets";
 import connectDB from "../../../../config/db";
 import Product from "../../../../models/Product";
+import authSeller from "../../../../lib/authSeller";
 // configure cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
