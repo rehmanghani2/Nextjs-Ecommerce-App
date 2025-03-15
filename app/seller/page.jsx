@@ -22,7 +22,7 @@ const AddProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const formData = new FormData();
+        const formData = new FormData()
 
         formData.append('name', name);
         formData.append('description', description);
@@ -43,9 +43,9 @@ const AddProduct = () => {
             if(data.success) {
                 toast.success(data.message);
                 setFiles([]);
-                setCategory('Earphone');
-                setDescription('');
                 setName('');
+                setDescription('');
+                setCategory('Earphone');
                 setPrice('');
                 setOfferPrice('');
             } else {
