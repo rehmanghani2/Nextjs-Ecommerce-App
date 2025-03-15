@@ -1,7 +1,7 @@
 import { v2 as cloudinary} from "cloudinary";
-import { getAuth } from 'clerk/nextjs/server';
+import { getAuth } from '@clerk/nextjs/server';
 import { NextResponse } from "next/server";
-import { assets } from "../../../../assets/assets";
+// import { assets } from "../../../../assets/assets";
 import connectDB from "../../../../config/db";
 import Product from "../../../../models/Product";
 // configure cloudinary
@@ -70,8 +70,7 @@ export async function POST(request) {
 
         return NextResponse.json({ success: true, message: 'upload successful', newProduct});
 
-
     } catch (error) {
-        
+        NextResponse.json({ success: true, message: error.message });
     }
 }
