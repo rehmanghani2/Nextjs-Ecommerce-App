@@ -72,6 +72,6 @@ export async function POST(request) {
         return NextResponse.json({ success: true, message: 'upload successful', newProduct});
 
     } catch (error) {
-       return NextResponse.json({ success: true, message: error.message });
+       return NextResponse.json({ success: false, message: error.message });
     }
 }
