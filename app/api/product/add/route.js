@@ -40,7 +40,7 @@ export async function POST(request) {
                 const buffer = Buffer.from(arrayBuffer);
 
                 return new Promise((resolve, reject) => {
-                    
+
                     const stream = cloudinary.uploader.upload_stream(
                         {resource_type: 'auto'},
                         (error, result) => {
@@ -72,6 +72,6 @@ export async function POST(request) {
         return NextResponse.json({ success: true, message: 'upload successful', newProduct});
 
     } catch (error) {
-        NextResponse.json({ success: true, message: error.message });
+       return NextResponse.json({ success: true, message: error.message });
     }
 }
