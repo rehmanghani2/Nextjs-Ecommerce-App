@@ -35,11 +35,12 @@ export async function POST(request) {
         }
         
         const result = await Promise.all(
-            files.map( async(file) => {
+            files.map( async (file) => {
                 const arrayBuffer = await file.arrayBuffer();
                 const buffer = Buffer.from(arrayBuffer);
 
                 return new Promise((resolve, reject) => {
+                    
                     const stream = cloudinary.uploader.upload_stream(
                         {resource_type: 'auto'},
                         (error, result) => {
