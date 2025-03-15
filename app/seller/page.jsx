@@ -5,6 +5,7 @@ import { assets } from "../../assets/assets";
 
 
 const AddProduct = () => {
+    
     const [files, setFiles] = useState([]);
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
