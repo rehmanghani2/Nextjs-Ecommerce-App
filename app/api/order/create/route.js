@@ -14,9 +14,9 @@ export async function POST(request){
         }
 
         // calculate amount using items
-        const amount = await items.reduce(async (accessedDynamicData, item) => {
+        const amount = await items.reduce(async (acc, item) => {
             const product = await Product.findById(item.product);
-            return acc + product.offerPrice * item.quantity;
+            return await acc + product.offerPrice * item.quantity;
         }, 0);
 
         await inngest.send({
